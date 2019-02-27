@@ -7,8 +7,8 @@ def main():
 
     pizza = [[]]
     file = open("data.txt")
-    input_args = file.readline();
-    rows, cols, min_ingre, max_cells = input_args.split(" ").strip()
+    input_args = file.readline()
+    rows, cols, min_ingre, max_cells = input_args.strip().split(" ")
 
 
     data = file.readlines()
