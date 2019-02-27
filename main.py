@@ -5,18 +5,19 @@ def main():
     #file.read()    // read whole file
     #file.readline() // read a line one char at a time
 
-    player = {}
-    f = open("data.txt")
-    data = f.readlines()
-    for line in data:
+    pizza = [[]]
+    file = open("data.txt")
+    input_args = file.readline();
+    rows, cols, min_ingre, max_cells = input_args.split(" ")
+
+    data = file.readlines()
+    for i, line in enumerate(data):
+        pizza.append([])
+        for item in line.split(" "):
+            pizza[i].append(item.strip())
         # parse input, assign values to variables
-        key, value = line.split(":")
-        player[key.strip()] = value.strip()
-    f.close()
-
-
-
-
+        #player[key.strip()] = value.strip()
+    file.close()
 
 
 
