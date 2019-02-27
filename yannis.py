@@ -14,7 +14,7 @@ def main():
     for i, line in enumerate(data):
         for item in line.strip().split(" "):
             #pizza[i].append(item.strip())
-            pizza[i].append([c for c in item])
+            pizza.append([c for c in item])
 
         # parse input, assign values to variables
         #player[key.strip()] = value.strip()
