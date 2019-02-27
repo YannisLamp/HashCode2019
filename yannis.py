@@ -12,8 +12,7 @@ def main():
 
     data = file.readlines()
     for i, line in enumerate(data):
-        pizza.append([])
-        for item in line.split(" "):
+        for item in line.strip().split(" "):
             #pizza[i].append(item.strip())
             pizza[i].append([c for c in item])
 
@@ -22,7 +21,7 @@ def main():
 
     file.close()
 
-
+    print(pizza)
 
 
 if __name__ == "__main__": main()
