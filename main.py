@@ -8,7 +8,8 @@ def main():
     pizza = [[]]
     file = open("data.txt")
     input_args = file.readline();
-    rows, cols, min_ingre, max_cells = input_args.split(" ")
+    rows, cols, min_ingre, max_cells = input_args.split(" ").strip()
+
 
     data = file.readlines()
     for i, line in enumerate(data):
@@ -17,6 +18,7 @@ def main():
             pizza[i].append(item.strip())
         # parse input, assign values to variables
         #player[key.strip()] = value.strip()
+
     file.close()
 
 
