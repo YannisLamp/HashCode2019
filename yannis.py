@@ -11,7 +11,7 @@ def main():
 
 
     data = file.readlines()
-    for i, line in enumerate(data):
+    for line in data:
         for item in line.strip().split(" "):
             #pizza[i].append(item.strip())
             pizza.append([c for c in item])
