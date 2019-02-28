@@ -4,7 +4,8 @@ class Photo:
         self.tag_num = tag_num
         self.tags = tags
 
-
+    def __str__(self):
+        return str(self.is_vertical)
 
 
 
@@ -14,22 +15,30 @@ def main():
     input_arg = file.readline()
     photo_num = int(input_arg.strip())
 
+    photos = []
     photos_vert = []
     photos_hor = []
-    for i in range(photo_num):
+    for i in range(photo_num):  # To i einai to id
         line_list = file.readline().strip().split(" ")
         tag_num = int(line_list[1])
         tags = [line_list[j] for j in range(2, tag_num + 2)]
 
         if line_list[0] == "V":
             is_vertical = True
-            photos_vert.append(Photo(is_vertical, tag_num, tags))
         else:
             is_vertical = False
-            photos_hor.append(Photo(is_vertical, tag_num, tags))
+
+        curr_photo = Photo(is_vertical, tag_num, tags)
+        photos.append(curr_photo)
+        if line_list[0] == "V":
+            photos_vert.append(curr_photo)
+        else:
+            photos_hor.append(curr_photo)
 
 
     file.close()
+    for i in photos:
+        print(i)
 
     #is_assigned = []
     #for line in pizza:
