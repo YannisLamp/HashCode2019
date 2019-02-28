@@ -1,4 +1,5 @@
 from operator import itemgetter
+from math import ceil
 
 class Photo:
     def __init__(self, is_vertical, tag_num, tags, id):
@@ -56,12 +57,45 @@ def main():
     Vert=[]
     for photo in photos_vert:
         Vert.append((photo.tag_num,photo.id))
-    print(Vert)
     #Vert.sort(key = lambda x: x[0])             #sort slides
-    Vert.sort(key = itemgetter(1))
-    
-    #print(Vert)
+    Vert.sort(key = itemgetter(0), reverse=True)
+    print(Vert)
 
+    check_num = ceil(len(photos_vert)/5)
+    if check_num > 20:
+        check_num = 20
+
+    Slides = []
+    while len(Vert) > 2:
+        pht = Vert[0]
+        pht_tags = photos[pht[1]].tags
+        Vert.remove(pht)
+        maxnum = 0
+        for i in range(check_num):
+            #print(Vert[-i-1])
+            temp = Vert[-i-1]
+            temp_tags = photos[temp[1]].tags
+            s = len(pht_tags)+len(temp_tags)-2*len(list(set(pht_tags).intersection(temp_tags)))
+            if maxnum < s:
+                maxnum = s
+                maxnumpht = temp
+                maxnumpht_tags = temp_tags
+        Vert.remove(maxnumpht)
+        same_tags = pht_tags
+        for tag in maxnumpht_tags:
+            if tag not in same_tags:
+                same_tags.append(tag)
+        curr_slide = Slide(same_tags, pht[1], maxnumpht[1])
+        Slides.append(curr_slide)
+    if len(Vert) == 2:
+        same_tags = photos[Vert[0][1]].tags
+        for tag in photos[Vert[1][1]].tags:
+            if tag not in same_tags:
+                same_tags.append(tag)
+        curr_slide = Slide(same_tags, Vert[0][1], Vert[1][1])
+        Slides.append(curr_slide)
+    for i in Slides:
+        print(i)
     #print(photos_vert)
     #print(photos_hor)
 
