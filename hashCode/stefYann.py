@@ -166,9 +166,9 @@ def main():
     #for sl in cons:
     #    print(sl)
 
-    print('\n')
-    print(len(cons))
-    print(score)
+    #print('\n')
+    #print(len(cons))
+    #print(score)
 
     f = open("output.txt","w+")
     f.write(str(len(cons))+"\n")
