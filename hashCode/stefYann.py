@@ -1,14 +1,31 @@
+class Photo:
+    def __init__(self, is_vertical, tags):
+        self.is_vertical = is_vertical
+        self.tags = tags
+
+
+
+
+
 def main():
     input_path = 'data.txt'
     pizza = []
     file = open(input_path)
-    input_args = file.readline()
-    rows, cols, min_ingre, max_cells = input_args.strip().split(" ")
+    input_arg = file.readline()
+    photo_num = int(input_arg.strip())
 
-    data = file.readlines()
-    for line in data:
-        for item in line.strip().split(" "):
-            pizza.append([c for c in item])
+    for i in range(photo_num):
+        line_list = file.readline().strip().split(" ")
+        if line_list[0] == "V":
+            is_vertical = True
+        else:
+            is_vertical = False
+
+        tag_num = int(line_list[1])
+
+        for j in range(tag_num):
+            
+
 
     file.close()
     print(pizza)
