@@ -9,6 +9,14 @@ class Photo:
         return str(self.is_vertical)
 
 
+def find_horizontal_mean(photos_hor):
+    hori_sum = 0
+    for photo in photos_hor:
+        hori_sum += photo.tag_num
+
+    return hori_sum / len(photos_hor)
+
+
 
 def main():
     input_path = 'a_example.txt'
@@ -36,6 +44,9 @@ def main():
         else:
             photos_hor.append(curr_photo)
 
+
+    hori_mean = find_horizontal_mean(photos_hor)
+    print(hori_mean)
 
     file.close()
     for i in photos:
