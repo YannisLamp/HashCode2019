@@ -18,6 +18,9 @@ def find_horizontal_mean(photos_hor):
 
 
 
+
+
+
 def main():
     input_path = 'a_example.txt'
     file = open(input_path)
@@ -27,7 +30,7 @@ def main():
     photos = []
     photos_vert = []
     photos_hor = []
-    for i in range(photo_num):  # To i einai to id
+    for i in range(photo_num):  # i is id
         line_list = file.readline().strip().split(" ")
         tag_num = int(line_list[1])
         tags = [line_list[j] for j in range(2, tag_num + 2)]
@@ -52,17 +55,7 @@ def main():
     for i in photos:
         print(i)
 
-    #is_assigned = []
-    #for line in pizza:
-    #    is_assigned.append([])
-    #    for cell in line:
-    #        is_assigned[]
 
-    #Slice.pizza = pizza
-    #Slice.constraints = Constraints(rows, cols, min_ingre, max_cells)
-
-    #for i in range(1, 6):
-        #print(i)
 
 
 if __name__ == "__main__": main()
