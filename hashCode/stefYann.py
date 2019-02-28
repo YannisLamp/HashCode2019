@@ -39,7 +39,7 @@ def match_consecutive_slides(slides):
     presentation = []
     total_score = 0
     #check_range = len(slides)
-    check_range = 1000
+    check_range = 200
 
     #while len(presentation) < len(slides):
     presentation.append(slides[0])
