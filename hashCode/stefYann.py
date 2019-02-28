@@ -1,6 +1,7 @@
 class Photo:
     def __init__(self, is_vertical, tag_num, tags):
         self.is_vertical = is_vertical
+        self.tag_num = tag_num
         self.tags = tags
 
 
