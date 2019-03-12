@@ -15,5 +15,7 @@ with the meximum projected score each time by checking the next 200.
 
 
 <p>
+
  **Team members: Chatzidakis Rafael, Gkoutierres-Fernantes Errikos, Lamprou Yannis, Pantoulas Stefanos** 
+ 
 </p>
