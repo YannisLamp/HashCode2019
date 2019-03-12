@@ -20,3 +20,5 @@ with the maximum projected score each time by checking the next 200.
  **Team members: Chatzidakis Rafael, Gkoutierres-Fernantes Errikos, Lamprou Yannis, Pantoulas Stefanos** 
  
 </p>
+
+**Placed : 745 Score : 745.194**
