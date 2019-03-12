@@ -1,6 +1,6 @@
 # Google Hash Code 2019
-<h2>Our Approach</h2>
-
+Our Approach
+===========
 <p>
 
 </p>
