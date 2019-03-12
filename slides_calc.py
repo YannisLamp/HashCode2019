@@ -39,10 +39,10 @@ def find_horizontal_mean(photos_hor):
 def match_consecutive_slides(slides):
     presentation = []
     total_score = 0
-    #check_range = len(slides)
+    
+    # Increase check range for better results, may be slower though 
     check_range = 200
 
-    #while len(presentation) < len(slides):
     presentation.append(slides[0])
     last_slide = slides[0]
     del slides[0]
@@ -73,7 +73,7 @@ def create_verts(photos_vert, photos):
     Vert = []
     for photo in photos_vert:
         Vert.append((photo.tag_num, photo.id))
-    # Vert.sort(key = lambda x: x[0])             #sort slides
+    # sort slides
     Vert.sort(key=itemgetter(0), reverse=True)
 
     check_num = ceil(len(photos_vert) / 5)
@@ -159,13 +159,9 @@ def main():
         sortedSlides.append(i[1])
 
     # Sort Slides
-    #slides = Sorted slides according to tags
-
-    #print(getProjectedScore(slide1, slide2))
     cons, score = match_consecutive_slides(sortedSlides)
     #for sl in cons:
     #    print(sl)
-
     #print('\n')
     #print(len(cons))
     #print(score)
@@ -175,7 +171,6 @@ def main():
     for i in cons:
         #s = print(i)
         f.write(str(i) + "\n")
-
 
     f.close()
     file.close()
