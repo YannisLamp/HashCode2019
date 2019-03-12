@@ -12,6 +12,7 @@ Our Approach
 
 
 <p>
-Team members:
-Chatzidakis Rafael, Gkoutierres-Fernantes Errikos, Lamprou Yannis, Pantoulas Stefanos
+  
+ **Team members: Chatzidakis Rafael, Gkoutierres-Fernantes Errikos, Lamprou Yannis, Pantoulas Stefanos** 
+ 
 </p>
